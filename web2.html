@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universitas XYZ</title>
+    <link rel="stylesheet" href="web2.css">
+    <head>
+
+        <script>
+            // Script untuk tampilan slide pada gambar program studi
+            let currentIndex = 0;
+    
+            function showProgramImage(index) {
+                const programImages = document.querySelectorAll('#featured img');
+                programImages[currentIndex].style.display = 'none';
+                currentIndex = index;
+                if (currentIndex >= programImages.length) {
+                    currentIndex = 0;
+                }
+                programImages[currentIndex].style.display = 'block';
+            }
+    
+            // Auto-ganti gambar setiap 3 detik
+            setInterval(() => {
+                showProgramImage(currentIndex + 1);
+            }, 3000);
+    
+            // Script untuk menampilkan deskripsi saat hover pada event
+            const events = document.querySelectorAll('.event');
+    
+            events.forEach((event, index) => {
+                event.addEventListener('mouseover', () => {
+                    event.querySelector('p').style.display = 'block';
+                });
+    
+                event.addEventListener('mouseout', () => {
+                    event.querySelector('p').style.display = 'none';
+                });
+            });
+        </script>
+        <script>
+            function showSuccessMessage() {
+                alert("Pesan Anda telah berhasil dikirim. Terima kasih!");
+                document.getElementById("contact-form").reset();
+            }
+        </script>
+    </head>    
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="1581795440994.jpg" alt="Logo Universitas XYZ">
+        </div>
+        <h1>By Muhamad noufal afip</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Program Studi</a></li>
+            <li><a href="#">Kegiatan Akademik</a></li>
+            <li><a href="#">Fasilitas</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+        </ul>
+    </nav>
+
+    <section id="featured">
+        <h2>Program Studi Unggulan</h2>
+        <p>Temukan program studi terbaik untuk masa depan Anda di Universitas noufal anak tampan abad ini.</p>
+        <img src="program_image.jpg" alt="Program Studi">
+    </section>
+
+    <section id="events">
+        <h2>Kegiatan Akademik Terkini</h2>
+        <div class="event">
+            <img src="event_image1.jpg" alt="Event 1">
+            <p>Deskripsi singkat event 1.</p>
+        </div>
+        <div class="event">
+            <img src="event_image2.jpg" alt="Event 2">
+            <p>Deskripsi singkat event 2.</p>
+        </div>
+    </section>
+
+    <section id="facilities">
+        <h2>Fasilitas Universitas</h2>
+        <p>Universitas XYZ menyediakan fasilitas modern untuk mendukung kegiatan belajar-mengajar.</p>
+        <img src="facilities_image.jpg" alt="Fasilitas Universitas">
+    </section>
+<section id="student-gallery">
+    <h2>Galeri Mahasiswa</h2>
+    <div class="student-images">
+        <img src="student1.jpg" alt="Mahasiswa 1">
+        <img src="student2.jpg" alt="Mahasiswa 2">
+        <img src="student3.jpg" alt="Mahasiswa 3">
+    </div>
+</section>
+
+<section id="news">
+    <h2>Berita dan Artikel</h2>
+    <div class="article">
+        <img src="article1.jpg" alt="Artikel 1">
+        <h3>Judul Artikel 1</h3>
+        <p>Deskripsi singkat artikel 1.</p>
+        <a href="#">Baca Selengkapnya</a>
+    </div>
+    <div class="article">
+        <img src="article2.jpg" alt="Artikel 2">
+        <h3>Judul Artikel 2</h3>
+        <p>Deskripsi singkat artikel 2.</p>
+        <a href="#">Baca Selengkapnya</a>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Hubungi Kami</h2>
+    <p>Jika Anda memiliki pertanyaan atau ingin mendapatkan informasi lebih lanjut, silakan hubungi kami:</p>
+    <form id="contact-form" onsubmit="showSuccessMessage(); return false;">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Pesan:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Kirim Pesan</button>
+    </form>
+</section>
+
+<script>
+    // Tampilkan pesan sukses saat formulir kontak dikirim
+    function showSuccessMessage() {
+        alert("Pesan Anda telah berhasil dikirim. Terima kasih!");
+    }
+</script>
+
+<section id="contact">
+    <h2>Hubungi Kami</h2>
+    <p>Jika Anda memiliki pertanyaan atau ingin mendapatkan informasi lebih lanjut, silakan hubungi kami:</p>
+    <div class="contact-info">
+        <p>Email: info@universitasxyz.com</p>
+        <p>Telepon: (123) 456-7890</p>
+    </div>
+</section>
+
+    <footer>
+        <p>&copy; 2023 Universitas Anak Tampan. Dimana ada Loli disitu ada kami.</p>
+    </footer>
+
+</body>
+</html>
